@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+
+            <br/>
+            <div class="grid">
+                <div >
+                </div>
+                <div >
+                </div>
+                <div class="border_top" >
+              </div>
+              <div class="border_top" >
+              </div>
+              <div class="border_top" >
+              </div>
+              <div class="border_top" >
+              </div>
+              <div>
+            </div>
+              </br>
+              <div class="border_left_top" > </div>
+
+              <div class="polygon" onclick="colorize(this)">
+                  <div class="letter"></div>
+              </div>
+              <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="border_right_line_top" > </div>
+
+            
+            </br>
+            <div class="border_left_line" > </div>
+
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="border_right_full" > </div>
+
+            </br>
+            <div class="border_left_full" > </div>
+
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="border_right_line" > </div>
+
+            </br>
+            <div class="border_left_line" > </div>
+
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="border_right_full" > </div>
+
+            </br>
+            <div class="border_left_bottom" > </div>
+
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="polygon" onclick="colorize(this)">
+                <div class="letter"></div>
+            </div>
+            <div class="border_right_line_bottom" > </div>
+
+            <br/>
+            <div >
+            </div>
+            <div >
+            </div>
+            <div class="border_bottom" >
+          </div>
+          <div class="border_bottom" >
+          </div>
+          <div class="border_bottom" >
+          </div>
+          <div class="border_bottom" >
+          </div>
+          <div>
+        </div>
+            </div>
+          </div>
+                  
+        <script src="" async defer></script>
+
+        <script>
+            
+            var base_color= "rgb(232, 238, 198)";// "rgb(232, 238, 198)";
+            var red_color = "red";
+            var green_color = "green";
+
+            const alphabet = ["أ","ب","ت","ث","ج","ح","خ","د","ذ","ر","ز","س","ش","ص","ض","ع","غ","ف","ق","ك","ل","م","ن","هـ","و","ي"
+        ,
+        "1","2","3","4","5","6","7","8","9"
+        ];
+
+            window.onload = function() {
+                var letters = document.getElementsByClassName("letter");
+                randomize_letters(letters);
+            
+                var anchors = document.getElementsByClassName("polygon");
+                for(var i = 0; i < anchors.length; i++) {
+                    var anchor = anchors[i];
+                    base(anchor);
+                }
+            }
+
+            function randomize_letters(letters){
+                for(var i = 0; i < letters.length; i++) {
+                    var random = Math.floor(Math.random() * alphabet.length);
+                    var removed = alphabet.splice(random,1);
+                    letters[i].innerHTML = removed;
+                }
+                
+            }
+
+            function base(anchor) {
+                        anchor.style.backgroundColor = base_color;
+            }
+
+            function colorize(anchor) {
+                console.log(anchor.style.backgroundColor);
+                console.log(base_color);
+
+                if(anchor.style.backgroundColor == base_color)
+                        anchor.style.backgroundColor = green_color;
+                        else if(anchor.style.backgroundColor == green_color)
+                            anchor.style.backgroundColor = red_color;
+                            else if(anchor.style.backgroundColor == red_color)
+                                anchor.style.backgroundColor = base_color;
+
+
+            }
+        </script>
+    </body>
+</html>

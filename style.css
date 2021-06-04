@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background: rgb(255, 255, 255);
+    /* color: white; */
+}
+
+
+
+
+.main {
+    display:flex;
+    place-content: center;
+    --s: 100px;  /* size  */
+    --m: 1px;    /* margin */
+    --f: calc(var(--s)*3*1.1547/2 + 4*var(--m)  - 2px);
+  }
+
+  
+  .grid {
+    font-size: 0; /*disable white space between inline block element */
+  }
+  
+  .grid div {
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s)*1.1547); /*  = 1/cos(30)  */
+    display: inline-block;
+    font-size:initial;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    /* background: rgb(224, 216, 179); */
+    border:5px;
+    margin-bottom: calc(var(--m) - var(--s)*0.2885); /* = tan(30)/2 */
+    vertical-align: middle;
+    text-align: center;
+  }
+
+
+  .grid::before {
+    content: "";
+    width: calc(var(--s)/2 + var(--m));
+    float: left;
+    height: 100%;
+    shape-outside: repeating-linear-gradient(     
+                     #0000 0 calc(var(--f) - 3px),      
+                     #fff        0 var(--f));
+  }
+
+
+
+  div .letter {
+    display: table-cell;
+    font-size: xx-large;
+}
+  
+
+/* top border */
+.border_top{
+    background: green;
+    clip-path: polygon(0% 60%, 0% 75%, 50% 100%, 100% 75%, 100% 60%, 50% 85%) !important;
+}
+
+/* bottom border */
+.border_bottom{
+    background: green;
+    clip-path: polygon(0% 25%, 0% 40%, 50% 15%, 100% 40%, 100% 25%, 50% 0%) !important;
+}
+
+
+
+/* left */
+.border_left_full{
+    background: #bb0d0d;
+    clip-path: polygon(50% 18%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 50% 83%, 85% 64%, 85% 36%) !important;
+}
+
+
+.border_left_top{
+    background: #bb0d0d;
+    clip-path: polygon(84% 31%, 100% 25%, 100% 75%, 50% 100%, 50% 83%, 83% 65%) !important;
+}
+
+.border_left_bottom{
+    background: #bb0d0d;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 82% 68%, 83% 34%, 50% 18%) !important
+}
+
+.border_left_line{
+    background: #bb0d0d;
+    clip-path: polygon(85% 15%, 100% 6.8%, 100% 94.7%, 85% 85%) !important;
+}
+
+/** right **/
+.border_right_full{
+    background: #bb0d0d;
+    clip-path: polygon(50% 0, 50% 17%, 16% 35%, 15% 65%, 50% 84%, 50% 100%, 0 75%, 0 25%) !important;
+    /* polygon(0 25%, 15% 18%, 15% 83%, 0 75%) !important; */
+}
+
+.border_right_line{
+    background: #bb0d0d;
+    clip-path: polygon(0 8%, 15% 15%, 15% 85%, 0 94%) !important;
+}
+
+
+.border_right_line_top{
+    background: #bb0d0d;
+    clip-path: polygon(0 26%, 15% 33%, 15% 85%, 0 94%) !important
+}
+
+
+.border_right_line_bottom{
+    background: #bb0d0d;
+    clip-path: polygon(0 8%, 15% 15%, 15% 67%, 0 74%) !important;
+}
